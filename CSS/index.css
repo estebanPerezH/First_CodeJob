@@ -195,9 +195,7 @@
         background-repeat: no-repeat;
         background-position: center;
     }
-
-    body.open .burger {
-        background-image: url("/img/close.svg");
+[type="text"]e.svg");
     }
 
     .background {
@@ -303,10 +301,52 @@
 } */
 /* ------------------------------------------ MAIN ------------------------------------------ */
 .container_main{
+    display: flex;
     grid-area: main;
     width: 100%;
     height: 100vh;
     background-color: rgb(25, 25, 25);
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.search-container_main {
+    width: 100%;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: center;
+
+
+}
+
+.input_buscador {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+}
+
+.boton_buscador {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.cajas_empresas{
+    background-color: #4CAF50;
+    width: 200px;
+    height: 200px;
 }
 /* ----------------------------------------- FOOTER ------------------------------------------*/
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
@@ -429,3 +469,7 @@
         background-positon-x: 0px;
     }
 } */
+/* Estilos básicos para el buscador */
+
+
+
