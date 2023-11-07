@@ -1,8 +1,8 @@
 /* ----------------------------------------- FOOTER ------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-
-
+*{
+    font-family: sans-serif;
+}
 .footer {
     grid-area: footer;
     position: relative;
@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-weight: bold;
 }
 
 .social-icon,
@@ -26,15 +27,13 @@
     margin: 10px 0;
     flex-wrap: wrap;
 }
-
 .social-icon__item,
 .menu__item {
     list-style: none;
 }
-
 .social-icon__link {
     font-size: 2rem;
-    color: #fff;
+    color: var(--color-text);
     margin: 0 10px;
     display: inline-block;
     transition: 0.5s;
@@ -42,31 +41,12 @@
 .social-icon__link:hover {
     transform: translateY(-10px);
 }
-
-.menu__link {
-    font-size: 1.2rem;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
-    text-decoration: none;
-    opacity: 0.75;
-    font-weight: 300;
-}
-
-.menu__link:hover {
-    opacity: 1;
-}
-
 .footer p {
-    color: #fff;
+    color: var(--color-text);
     margin: 15px 0 10px 0;
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: var(--size-paragrahp);
 }
-
 .wave {
-    
     position: absolute;
     z-index: 100;
     top: -100px;

@@ -14,42 +14,59 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 80px;
+    height: 101px;
     position: fixed;
     margin-bottom: 210px;
     background-image: url(/img/imagen_navbar.jpg);
-    background-position: 0px -620px;
+    background-position: 0px -630px;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 100;
 }
 .title{
-    font-size: 1.5rem;
-    color: rgb(227, 227, 227);
+    font-family: "Euclid Circular A", Poppins;
+    font-size: var(--size-title);
+    font-weight: bold;
+    color: var(--color-text);
+    text-decoration: none;
     display: inline-block;
     overflow: hidden;
-    white-space: nowrap;
+    background-color: var(--color-background-text-hover);
+    border-radius: 8px;
     width: 0;
     animation-name: logo_animation;
-    animation-duration: 0.8s;
-    animation-iteration-count: 3;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
     animation-direction:alternate;
     animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
 .brackets{
-    color: rgb(227, 227, 227);
+    color: var(--color-text);
+    font-size: var(--size-title);
     font-weight: bold;
     font-size: 1.8rem;
     padding: 6px 0;
+    text-shadow: 0px 2px 5px rgb(0, 0, 0);
 }
 /* ANIMACIONES */
 @keyframes logo_animation{
-    from{
+    0%{
         width: 0;
         opacity: 0;
     }
-    to{
-        width: 185px;
+    40%{
+        text-shadow: 0px 30px 10px rgb(252, 252, 252);
+        opacity: 0.2;
+    }
+    80%{
+        text-shadow: 0px -30px 10px rgb(252, 252, 252);
+        opacity: 0.2;
+    }
+    100%{
+        width: 243px;
         opacity: 1;
+        text-shadow: 0px 2px 5px rgb(0, 0, 0);
     }
 }
 /* ---------------------- NAVBAR ---------------------- */
@@ -60,7 +77,7 @@
     width: 100%;
     height: 130px;
     background-image: url(/img/imagen_navbar.jpg);
-    background-position: 0px -700px;
+    background-position: 0px -720px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -72,13 +89,15 @@
     
 }
 .item a{
+    font-size: var(--size-paragrahp);
     text-decoration: none;
-    color: aliceblue;
-    padding: 0.5rem 0.5rem;
+    color: var(--color-text);
+    text-shadow: 0px 2px 5px rgb(0, 0, 0);
+    padding: 0.5rem 0.9rem;
     margin: 0 3rem;
     position: relative;
     bottom: 0;
-    background-color: rgba(99, 61, 161, 0.743);
+    background-color: var(--color-background-text);
     border-radius: 5px;
     transition: all 0.3s;
 }
@@ -86,35 +105,46 @@
 /* NAVBAR HOVER */
 .item:hover > a{
     bottom: 0.5rem;
-    text-shadow: rgb(25, 25, 25) 1px 0 10px;
-    background-color: rgba(99, 61, 161, 0.743);
-    background-color: rgba(99, 61, 161, 0.222);
+    text-shadow: 0px 2px 5px rgb(0, 0, 0);
+    background-color: var(--color-background-text-hover);
     border-radius: 5px;
 }
 .item:hover{
-    border-bottom: 1px solid rgb(25, 25, 25);
+    border-bottom: 0.1rem solid var(--color-background-text-hover);
+}
+/* LANGUAGE OPTION */
+.language_container{
+    display: flex;
+    position: fixed;
+    top: 2.5%;
+    right: 3%;
+    z-index: 150;
+    background-color: var(--color-background-text);
+    padding: 0.5rem;
+    color: var(--color-text);
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 10px 0px 0px;
+}
+.language_english_text{
+    color: var(--color-text);
+    text-decoration: none;
+
+}
+/* LANGUAGE OPTION HOVER */
+.language_container:hover{
+    background-color: var(--color-background-text-hover);
+    font-weight: 100;
 }
 /* RESPONSIVE */
 @media screen and (max-width: 1800px){
     .header_container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-        position: fixed;
-        margin-bottom: 210px;
         background-image: url(/img/imagen_navbar.jpg);
-        background-position: 0px -920px;
+        background-position: 0px -911px;
         background-repeat: no-repeat;
         background-size:auto;
     }
     .container_list{
-        display: flex;
-        justify-content:center;
-        align-items:center;
-        width: 100%;
-        height: 130px;
         background-image: url(/img/imagen_navbar.jpg);
         background-position: 0px -1000px;
         background-repeat: no-repeat;
@@ -122,7 +152,7 @@
         position: relative;
     }
 }
-@media screen and (max-width: 885px) {
+@media screen and (max-width: 1005px) {
     /* IMAGE */
     .header_container{
         display: flex;
@@ -137,11 +167,46 @@
         background-repeat: no-repeat;
         background-size:auto;
     }
+    /* TITLE */
+    .title{
+        font-size: var(--size-subtitle);
+        animation-name: logo_animation;
+        animation-duration: 2.5s;
+        animation-iteration-count: 1;
+        animation-direction:alternate;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+    /* TITLE ANIMATION */
+    @keyframes logo_animation{
+        0%{
+            width: 0;
+            opacity: 0;
+        }
+        40%{
+            text-shadow: 0px 30px 10px rgb(252, 252, 252);
+            opacity: 0.2;
+        }
+        80%{
+            text-shadow: 0px -30px 10px rgb(252, 252, 252);
+            opacity: 0.2;
+        }
+        100%{
+            width: 11.5rem;
+            opacity: 1;
+            text-shadow: 0px 2px 5px rgb(0, 0, 0);
+        }
+    }
+    /* LANGUAGE OPTION */
+    .language_container{
+        top: 0;
+        right: 0;
+        padding: 0rem;
+    }
     /* MENU */
     body {
         font-family: "Euclid Circular A", Poppins;
         color: #f9f9f9;
-
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 0% 0%;
@@ -169,13 +234,13 @@
     }
 
     .burger {
-        z-index: 4;
+        z-index: 150;
         top: 0;
         left: 0;
         display: grid;
         place-items: center;
-        width: 88px;
-        height: 80px;
+        width: 3rem;
+        height: 5rem;
         background-image: url("/img/menu.svg");
         background-repeat: no-repeat;
         background-position: center;
